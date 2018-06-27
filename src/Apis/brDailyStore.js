@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button, Grid, Row, Col } from 'react-bootstrap';
 
 const API = 'http://localhost:8080/brDailyStore';
 const DEFAULT_QUERY = '';
@@ -38,6 +37,7 @@ const withFetching = (url) => (Comp) =>
 
 const BrDailyStore = ({ data, isLoading, error }) => {
   const hits = data.items || [];
+  const vbucks = data;
 
   if (error) {
     return <p>{error.message}</p>;
@@ -48,22 +48,27 @@ const BrDailyStore = ({ data, isLoading, error }) => {
   }
   var i = 0;
   return (
-    <div>
-      <p>Your URL is, {API + DEFAULT_QUERY}</p>
-      <Grid>
-        <Row className="show-grid">
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6">
+          <p className="float-left border rounded bg-success text-white padding-10">Api Running</p>
+        </div>
+        <div className="col-lg-6">
+          <p className="float-right padding-10">Your URL is, {API + DEFAULT_QUERY}</p>
+        </div>
+      </div>
+      <div className="row">
         {hits.map(hit =>
-              <Col key={i++} className="quarter">
-                <div key={i++}>
-                  <p>{hit.name}</p>
-                  <p className="wrap border">{hit.item.image}</p>
-                  <img src={hit.item.image} className="fill-fit black-bg"/>
-                  <p>VBUCK: {hit.cost}</p>
-                </div>
-              </Col>
+          <div key={i++} className="col-lg-3">
+            <div key={i++}>
+              <p>{hit.name}</p>
+              {/*<p className="text-center">{hit.item.image}</p>*/}
+              <img src={hit.item.image} className={'img-fluid ' + hit.item.rarity}/>
+              <p><img src={vbucks.vbucks} style={{ width: '25px' }}/>{hit.cost}</p>
+            </div>
+          </div>
         )}
-        </Row>
-      </Grid>
+      </div>
     </div>
   );
 }
