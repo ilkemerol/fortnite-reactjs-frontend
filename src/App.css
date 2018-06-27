@@ -28,3 +28,30 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.half {
+  width: 50%;
+  margin: 0;
+  float: left;
+}
+.quarter {
+  width: 25%;
+  margin: 0;
+  float: left;
+}
+
+.fill-fit {
+  width: 100%;
+}
+
+.wrap {
+  word-wrap: break-word;
+}
+
+.border {
+  border: 2px solid black;
+}
+
+.black-bg {
+  background: black;
+}
