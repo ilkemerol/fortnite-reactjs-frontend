@@ -1,41 +1,53 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-const CustomLinkExample = () => (
-  <Router>
-    <div>
-      <OldSchoolMenuLink activeOnlyWhenExact={true} to="/" label="Home" />
-      <OldSchoolMenuLink to="/about" label="About" />
-      <hr />
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-    </div>
-  </Router>
-);
+import brDailyStorePage from "../Pages/brDailyStorePage";
 
-const OldSchoolMenuLink = ({ label, to, activeOnlyWhenExact }) => (
-  <Route
-    path={to}
-    exact={activeOnlyWhenExact}
-    children={({ match }) => (
-      <div className={match ? "active" : ""}>
-        {match ? "> " : ""}
-        <Link to={to}>{label}</Link>
-      </div>
-    )}
-  />
-);
+class ApisList extends React.Component {
+    render() {
+        return (
+            <div>
+                <Switch>
+                    <Route exact path="/" component={ApiListView} />
+                    <Route exact path="/brDailyStorePage" component={brDailyStorePage} />
+                </Switch>
+            </div>
+        );
+    }
+}
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
+const ApiListView = () => (
+    <div className="container">
+        <div className="row">
+            <div className="col-lg-4 text-center">
+                <Link className="text-decoration-none" to="/brDailyStorePage">
+                    <div className="padding-50 legendary">
+                        <a className="text-center text-white">Daily Item Shop</a>
+                    </div>
+                </Link>
+            </div>
+            <div className="col-lg-4 text-center">
+                <Link className="text-decoration-none" to="/brDailyStorePage">
+                    <div className="padding-50 epic">
+                        <a className="text-center text-white">Daily Item Shop</a>
+                    </div>
+                </Link>
+            </div>
+            <div className="col-lg-4 text-center">
+                <Link className="text-decoration-none" to="/brDailyStorePage">
+                    <div className="padding-50 rare">
+                        <a className="text-center text-white">Daily Item Shop</a>
+                    </div>
+                </Link>
+            </div>
+        </div>
   </div>
 );
 
-const About = () => (
-  <div>
-    <h2>About</h2>
-  </div>
-);
+const PageView = () => (
+    <Router>
+      <Route component={ApisList} />
+    </Router>
+  );
 
-export default CustomLinkExample;
+export default PageView;

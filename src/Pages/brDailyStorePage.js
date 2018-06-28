@@ -2,18 +2,17 @@ import React, { Component } from 'react';
 import Navbar from '../Components/Navbar';
 import '../css/bootstrap.css';
 import '../App.css';
+import BrDailyStore from '../Apis/brDailyStore';
 
 
-class emptyPage extends Component {
+class brDailyStorePage extends Component {
   render() {
     return (
       <div>
-        <Navbar />
-        <div className="padding-10">
-        </div>
+        <BrDailyStore />
       </div>
     );
   }
 }
 
-export default emptyPage;
+export default brDailyStorePage;
