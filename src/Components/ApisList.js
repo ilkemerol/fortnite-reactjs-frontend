@@ -22,21 +22,21 @@ const ApiListView = () => (
             <div className="col-lg-4 text-center">
                 <Link className="text-decoration-none" to="/brDailyStorePage">
                     <div className="padding-50 legendary">
-                        <a className="text-center text-white">Daily Item Shop</a>
+                        <p className="text-center text-white">Daily Item Shop</p>
                     </div>
                 </Link>
             </div>
             <div className="col-lg-4 text-center">
                 <Link className="text-decoration-none" to="/brDailyStorePage">
                     <div className="padding-50 epic">
-                        <a className="text-center text-white">Daily Item Shop</a>
+                        <p className="text-center text-white">Daily Item Shop</p>
                     </div>
                 </Link>
             </div>
             <div className="col-lg-4 text-center">
                 <Link className="text-decoration-none" to="/brDailyStorePage">
                     <div className="padding-50 rare">
-                        <a className="text-center text-white">Daily Item Shop</a>
+                        <p className="text-center text-white">Daily Item Shop</p>
                     </div>
                 </Link>
             </div>
