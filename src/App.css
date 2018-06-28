@@ -1,28 +1,29 @@
-.App {
-  text-align: center;
+.padding-10 {
+  padding: 10px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.legendary {
+  background: radial-gradient(#d37841,#78371d);
+  border: 2px solid #e98d4b;
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.epic {
+  background: radial-gradient(#b15be2,#4b2483);
+  border: 2px solid #e95eff;
+  overflow: hidden;
 }
 
-.App-title {
-  font-size: 1.5em;
+.rare {
+  background: radial-gradient(#49acf2,#143977);
+  border: 2px solid #37d1ff;
+  overflow: hidden;
 }
 
-.App-intro {
-  font-size: large;
+.uncommon {
+  background: radial-gradient(#60aa3a,#175117);
+  border: 2px solid #87e339;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+
