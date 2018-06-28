@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import UserId from './Apis/UserIdApi';
-import BrDailyStore from './Apis/brDailyStore';
+import ApisList from './Components/ApisList';
 import Navbar from './Components/Navbar';
 import './css/bootstrap.css';
 import './App.css';
@@ -12,8 +11,7 @@ class App extends Component {
       <div>
         <Navbar />
         <div className="padding-10">
-          {/*<UserId />*/}
-          <BrDailyStore />
+          <ApisList />
         </div>
       </div>
     );
