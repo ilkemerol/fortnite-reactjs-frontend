@@ -4,7 +4,6 @@ import '../css/bootstrap.css';
 
 export default class Navbar extends React.Component {
     render() {
-      let brand = <a href='#'>Project Name</a>;
       return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="#">Navbar</a>
