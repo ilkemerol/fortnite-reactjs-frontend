@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import '../css/loader.css';
+
 const API = 'http://localhost:8080/brDailyStore';
 const DEFAULT_QUERY = '';
 
@@ -44,27 +46,29 @@ const BrDailyStore = ({ data, isLoading, error }) => {
   }
 
   if (isLoading) {
-    return <p>Loading ...</p>;
+    return <div className='loading'><div className='bullet'></div><div className='bullet'></div><div className='bullet'></div><div className='bullet'></div></div>;
   }
+  
   var i = 0;
   return (
     <div className="container">
       <div className="row">
-        <div className="col-lg-6">
-          <p className="float-left border rounded bg-success text-white padding-10">Api Running</p>
-        </div>
-        <div className="col-lg-6">
-          <p className="float-right padding-10">Your URL is, {API + DEFAULT_QUERY}</p>
-        </div>
+        <p className="font-style font-size-20 text-white">Shop Date: {vbucks.date}</p>
       </div>
       <div className="row">
         {hits.map(hit =>
           <div key={i++} className="col-lg-3">
-            <div key={i++}>
-              <p>{hit.name}</p>
-              {/*<p className="text-center">{hit.item.image}</p>*/}
-              <img src={hit.item.image} className={'img-fluid ' + hit.item.rarity}/>
-              <p><img src={vbucks.vbucks} style={{ width: '25px' }}/>{hit.cost}</p>
+            <div key={i++} className={"card splash-card splash " + hit.item.rarity}>
+              <img src={hit.item.image} className="img-fluid splash card-img-top outfit"/>
+              <div className="card-img-overlay">
+                <div className="card-body itemdesc">
+                  <h4 className="card-title itemname text-white"><span>{hit.name}</span></h4>
+                  <p className="card-text itemprice text-white">
+                    <img style={{ width: '25px' }} src={vbucks.vbucks} />
+                    {hit.cost}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         )}

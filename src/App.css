@@ -6,6 +6,29 @@
   padding: 50px;
 }
 
+.font-style {
+  font-family: luckiest guy,Lato,Roboto,Calibri,Arial;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
+.font-size-25 {
+  font-size: 25px;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+.splash:hover {
+  outline: 5px solid #ff0;
+}
+
+.bg-dimgray {
+  background: dimgray;
+}
+
 .legendary {
   background: radial-gradient(#d37841,#78371d);
   border: 2px solid #e98d4b;
@@ -33,5 +56,44 @@
 .text-decoration-none,
 .text-decoration-none:hover {
   text-decoration:none
+}
+
+.splash-card {
+  margin-bottom: 20px;
+  border-radius: 0;
+  min-height: 255px;
+}
+
+.card-img-overlay {
+  padding: 0;
+}
+
+.itemdesc {
+  background: rgba(0,0,0,.3);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.itemname {
+  font-family: luckiest guy,Lato,Roboto,Calibri,Arial;
+  text-transform: uppercase;
+  font-size: 25px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0,0,0,.5);
+  transform: scale(1,1.3);
+  -webkit-transform: scale(1,1.3);
+  -moz-transform: scale(1,1.3);
+  -ms-transform: scale(1,1.3);
+  -o-transform: scale(1,1.3);
+}
+
+.itemprice {
+  font-family: luckiest guy,Lato,Roboto,Calibri,Arial;
+  text-transform: uppercase;
+  font-size: 17px;
+  text-align: center;
+  margin-top: -12px;
+  text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 
