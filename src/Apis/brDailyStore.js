@@ -54,7 +54,7 @@ const BrDailyStore = ({ data, isLoading, error }) => {
     <div className="container">
       <div className="row">
         <div className="col-lg-6">
-          <p className="font-style font-size-20 text-white">Current Item Shop</p>
+          <p className="font-style font-size-20 text-white">Current Item Shop --</p>
         </div>
         <div className="col-lg-6">
           <p className="font-style font-size-20 text-white">Shop Date: {vbucks.date}</p>
