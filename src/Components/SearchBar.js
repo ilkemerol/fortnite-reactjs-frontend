@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import '../css/searchBar.css';
 
@@ -17,7 +18,9 @@ export default class SearchBar extends React.Component {
                         </form>
                     </div>
                     <div className="col-lg-2">
-                    <button type="button" className="btn btn-warning searchBtn text-white">Search</button>
+                        <Link to="/brDailyStorePage">
+                            <button type="button" className="btn btn-warning searchBtn text-white">Search</button>
+                        </Link>
                     </div>
                 </div>
             </div>
