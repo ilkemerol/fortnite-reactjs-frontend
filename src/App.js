@@ -3,6 +3,7 @@ import ApisList from './Components/ApisList';
 import Navbar from './Components/Navbar';
 import SearchBar from './Components/SearchBar';
 import './css/bootstrap.css';
+import  SearchArea from './Components/SearchArea';
 import './App.css';
 import WebFont from 'webfontloader';
 
@@ -13,6 +14,9 @@ WebFont.load({
 });
 
 class App extends Component {
+  constructor(props){
+    super(props);
+  }
   render() {
     return (
       <div>
