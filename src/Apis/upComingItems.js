@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import '../css/loader.css';
 
-const API = 'http://localhost:8080/brDailyStore';
+const API = 'http://localhost:8080/upComingItems';
 const DEFAULT_QUERY = '';
 
 const withFetching = (url) => (Comp) =>
@@ -53,12 +53,7 @@ const BrDailyStore = ({ data, isLoading, error }) => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-lg-6">
-          <p className="font-style font-size-20 text-white">Current Item Shop</p>
-        </div>
-        <div className="col-lg-6">
-          <p className="font-style font-size-20 text-white">Shop Date: {vbucks.date}</p>
-        </div>
+        
       </div>
       <div className="row">
         {hits.map(hit =>
