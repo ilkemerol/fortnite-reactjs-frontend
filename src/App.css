@@ -26,7 +26,7 @@
 }
 
 .bg-dimgray {
-  background: dimgray;
+  background: #1e1e1e;
 }
 
 .legendary {
@@ -53,6 +53,24 @@
   overflow: hidden;
 }
 
+.mainPagedailyStore {
+  background: radial-gradient(#d37841,#78371d);
+  background-image: url("images/dailyStore.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid #fff;
+  overflow: hidden;
+}
+
+.customMainPageCard {
+  height: 300px;
+}
+
+.customMainPageCardtext {
+  margin-top: 250px;
+  background: linear-gradient(to right, rgb(255, 255, 255, 0.1) , rgb(0, 0, 0, 0.9) , rgb(255, 255, 255, 0.1));
+}
+
 .text-decoration-none,
 .text-decoration-none:hover {
   text-decoration:none
@@ -62,6 +80,7 @@
   margin-bottom: 20px;
   border-radius: 0;
   min-height: 255px;
+  cursor: pointer;
 }
 
 .card-img-overlay {
@@ -96,4 +115,3 @@
   margin-top: -12px;
   text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
-
