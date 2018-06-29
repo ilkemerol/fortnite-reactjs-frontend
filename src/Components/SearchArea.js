@@ -15,7 +15,7 @@ export default class SearchArea extends React.Component{
             <div class="col-md-3 center-block">
                 <form action="#" method="get">
                     <div class="input-group">
-                        <input class="form-control" id="system-search" name="q" placeholder="Search for" required/>
+                        <input class="form-control" id="system-search" name="q" placeholder="Search for Person" required/>
                         <span class="input-group-btn">
                         <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
                         </span>
