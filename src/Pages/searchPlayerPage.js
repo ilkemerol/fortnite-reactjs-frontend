@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import ReacDOM from 'react-dom';
 import Navbar from '../Components/Navbar';
 import '../css/bootstrap.css';
 import '../App.css';
 
 const API = 'http://localhost:8080/playerStats?name=';
-const DEFAULT_QUERY = 'MyChoo';
 
 class searchPlayerPage extends React.Component {
   constructor(props){
@@ -12,7 +12,7 @@ class searchPlayerPage extends React.Component {
     this.state = {
       user : props.location.state.term,
       data : [],
-      isLoading: false,
+      isLoading: true,
       error: null
     }
   }
@@ -29,7 +29,8 @@ class searchPlayerPage extends React.Component {
     .catch(error => this.setState({ error, isLoading: false }));
   }
   render() {
-    console.log(this.state.data);
+    const hits = this.state.data.stats || [];
+    
     if (this.state.error) {
       return <p>{this.state.error.message}</p>;
     }
@@ -44,6 +45,8 @@ class searchPlayerPage extends React.Component {
         <p>{this.state.data.name}</p>
         <p>{this.state.data.platform}</p>
         <p>{this.state.data.window}</p>
+        <p>{hits.kills_solo}</p>
+        <p>{hits.placetop1_solo}</p>
       </div>
     </div>
     );
