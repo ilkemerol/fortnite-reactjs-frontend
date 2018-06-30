@@ -9,8 +9,6 @@
 .font-style {
   font-family: luckiest guy,Lato,Roboto,Calibri,Arial;
   text-transform: uppercase;
-  text-align: center;
-  text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 
 .font-size-25 {
