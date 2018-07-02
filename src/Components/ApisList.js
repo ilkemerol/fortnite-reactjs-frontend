@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import brDailyStorePage from "../Pages/brDailyStorePage";
 import upComingItemsPage from "../Pages/upComingItemsPage";
 import searchPlayerPage from "../Pages/searchPlayerPage";
+import newsPage from "../Pages/newsPage";
 
 import SearchBar from './SearchBar';
 import BrNews from "./brNews";
@@ -17,6 +18,7 @@ class ApisList extends React.Component {
                     <Route exact path="/brDailyStorePage" component={brDailyStorePage} />
                     <Route exact path="/upComingItemsPage" component={upComingItemsPage} />
                     <Route exact path="/searchPlayerPage" component={searchPlayerPage} />
+                    <Route exact path="/newsPage" component={newsPage} />
                 </Switch>
             </div>
         );
@@ -26,8 +28,10 @@ class ApisList extends React.Component {
 const ApiListView = () => (
     <div>
         <SearchBar />
+        <h1 className="text-center text-white"><u>Breaking News</u></h1>
         <BrNews />
-        <div className="container">
+        <h1 className="text-center text-white"><u>Awesome Tools</u></h1>
+        <div className="container margin-top-30">
             <div className="row">
                 <div className="col-lg-6 text-center">
                     <Link className="text-decoration-none" to="/brDailyStorePage">
