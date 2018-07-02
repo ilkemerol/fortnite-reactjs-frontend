@@ -6,6 +6,7 @@ import upComingItemsPage from "../Pages/upComingItemsPage";
 import searchPlayerPage from "../Pages/searchPlayerPage";
 
 import SearchBar from './SearchBar';
+import BrNews from "./brNews";
 
 class ApisList extends React.Component {
     render() {
@@ -25,6 +26,7 @@ class ApisList extends React.Component {
 const ApiListView = () => (
     <div>
         <SearchBar />
+        <BrNews />
         <div className="container">
             <div className="row">
                 <div className="col-lg-6 text-center">
