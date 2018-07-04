@@ -16,6 +16,14 @@
   padding: 50px;
 }
 
+.width100 {
+  width: 100%;
+}
+
+.mh450 {
+  min-height: 450px;
+}
+
 .font-style {
   font-family: luckiest guy,Lato,Roboto,Calibri,Arial;
   text-transform: uppercase;
