@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import '../css/loader.css';
+import '../css/homeLoader.css';
 
 const API = 'http://localhost:8080/news';
 const DEFAULT_QUERY = '';
@@ -29,7 +29,7 @@ const withFetching = (url) => (Comp) =>
             throw new Error('Something went wrong ...');
           }
         })
-        .then(data => this.setState({ data, isLoading: false }))
+        .then(data => this.setState({ data, isLoading: true }))
         .catch(error => this.setState({ error, isLoading: false }));
     }
 
@@ -66,10 +66,12 @@ const news = ({ data, isLoading, error }) => {
         console.log(customArr);
       }
       for(let j = 0; j < customArr.length; j++){
-        innerCarousel.push(<div key={customKey++} className="col-lg-3 mh450">
-                <p className="text-white text-center font-style">{customArr[j].title}</p>
+        innerCarousel.push(<div key={customKey++} className="col-lg-3 mh450 lightUp">
+                <Link className="text-decoration-none" to={"/newsPage#" + customArr[j.title]}>
+                <p className="text-white text-center font-style font-size-20 mh75">{customArr[j].title}</p>
                 <img src={customArr[j].image} className="width100" />
                 <p className="text-white text-center">{customArr[j].body}</p>
+                </Link>
                 </div>)
       }
       outerCarousel.push(<div key={customKey++} className={"carousel-item " + isActive(i)}><div className="container"><div className="row">{innerCarousel}</div></div></div>)
@@ -84,16 +86,25 @@ const news = ({ data, isLoading, error }) => {
   }
 
   if (isLoading) {
-    return <div className="container"><div className="row"><div className='loading override-loading'><div className='bullet'></div><div className='bullet'></div><div className='bullet'></div><div className='bullet'></div></div></div></div>;
+    return <div className="container"><div className="row"><div className="loader">
+    <div>
+      <div className="c1"></div>
+      <div className="c2"></div>
+      <div className="c3"></div>
+      <div className="c4"></div>
+    </div>
+    <span className="font-style">Getting News from Lama!</span>
+  </div></div></div>;
   }
   
   return (
-    <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" className="carousel slide margin-bottom-30" data-ride="carousel">
         <ol className="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
         </ol>
         <div className="carousel-inner">
             {createCarouselContent(hits)}
