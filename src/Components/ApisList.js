@@ -28,10 +28,12 @@ class ApisList extends React.Component {
 const ApiListView = () => (
     <div>
         <SearchBar />
-        <h1 className="font-style text-center text-white"><u>Breaking News</u></h1>
+        <h1 className="font-style text-center text-white">Breaking News</h1>
+        <hr className="hr margin-bottom-30" />
         <BrNews />
-        <h1 className="font-style text-center text-white"><u>Awesome Tools</u></h1>
-        <div className="container margin-top-30">
+        <h1 className="font-style text-center text-white margin-bottom-30">Awesome Tools</h1>
+        <hr className="hr margin-bottom-30" />
+        <div className="container margin-top-30 margin-bottom-100">
             <div className="row">
                 <div className="col-lg-6 text-center">
                     <Link className="text-decoration-none" to="/brDailyStorePage">

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import '../css/homeLoader.css';
+import lama from '../css/lama.png';
 
 const API = 'http://localhost:8080/news';
 const DEFAULT_QUERY = '';
@@ -29,7 +30,7 @@ const withFetching = (url) => (Comp) =>
             throw new Error('Something went wrong ...');
           }
         })
-        .then(data => this.setState({ data, isLoading: true }))
+        .then(data => this.setState({ data, isLoading: false }))
         .catch(error => this.setState({ error, isLoading: false }));
     }
 
@@ -66,23 +67,31 @@ const news = ({ data, isLoading, error }) => {
         console.log(customArr);
       }
       for(let j = 0; j < customArr.length; j++){
-        innerCarousel.push(<div key={customKey++} className="col-lg-3 mh450 lightUp">
+        innerCarousel.push(<div key={customKey++} className="col-lg-3 mh550 lightUp">
                 <Link className="text-decoration-none" to={"/newsPage#" + customArr[j.title]}>
                 <p className="text-white text-center font-style font-size-20 mh75">{customArr[j].title}</p>
                 <img src={customArr[j].image} className="width100" />
+                <hr className="hr" />
                 <p className="text-white text-center">{customArr[j].body}</p>
                 </Link>
                 </div>)
       }
       outerCarousel.push(<div key={customKey++} className={"carousel-item " + isActive(i)}><div className="container"><div className="row">{innerCarousel}</div></div></div>)
       innerCarousel = []
-      i = i + 3;
+      i = i + 4;
     }
     return outerCarousel
   }
 
   if (error) {
-    return <p>{error.message}</p>;
+    return <div className="container">
+    <div className="row">
+    <img src={lama} style={{width: '150px', height: '200px', margin: 'auto'}}/>
+    </div>
+    <div className="row">
+    <p className="font-style font-size-25 text-white margin-auto">Opps! We missed some Lama</p>
+    </div>
+    </div>;
   }
 
   if (isLoading) {
