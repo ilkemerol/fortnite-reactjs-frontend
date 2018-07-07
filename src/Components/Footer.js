@@ -60,11 +60,11 @@ const news = ({ data, isLoading, error }) => {
   }
 
   if (error) {
-    return <p>error</p>;
+    return <div className="footer"><p className="font-style text-white text-center">error</p></div>;
   }
 
   if (isLoading) {
-    return <p>loading</p>;
+    return <div className="footer"><p className="font-style text-white text-center">loading</p></div>;
   }
   
   return (

@@ -22,6 +22,9 @@
     height: 35px;
     position: relative;
     color: #E74C3C;
+    margin-top: 7px;
+    float: right;
+    padding-right: 15px;
   }
   
   /** Server status css **/

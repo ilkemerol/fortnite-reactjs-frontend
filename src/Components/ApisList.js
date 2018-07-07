@@ -5,6 +5,7 @@ import brDailyStorePage from "../Pages/brDailyStorePage";
 import upComingItemsPage from "../Pages/upComingItemsPage";
 import searchPlayerPage from "../Pages/searchPlayerPage";
 import newsPage from "../Pages/newsPage";
+import top10Page from "../Pages/top10Page";
 
 import SearchBar from './SearchBar';
 import BrNews from "./brNews";
@@ -19,6 +20,7 @@ class ApisList extends React.Component {
                     <Route exact path="/upComingItemsPage" component={upComingItemsPage} />
                     <Route exact path="/searchPlayerPage" component={searchPlayerPage} />
                     <Route exact path="/newsPage" component={newsPage} />
+                    <Route exact path="/top10Page" component={top10Page} />
                 </Switch>
             </div>
         );
@@ -46,6 +48,16 @@ const ApiListView = () => (
                     <Link className="text-decoration-none" to="/upComingItemsPage">
                         <div className="customMainPageCard mainPagedailyStore splash">
                             <p className="text-center text-white font-style font-size-25 customMainPageCardtext">Upcoming Items</p>
+                        </div>
+                    </Link>
+                </div>
+            </div>
+            <br />
+            <div className="row">
+                <div className="col-lg-6 text-center">
+                    <Link className="text-decoration-none" to="/top10Page">
+                        <div className="customMainPageCard mainPagetopTen splash">
+                            <p className="text-center text-white font-style font-size-25 customMainPageCardtext">Top 10</p>
                         </div>
                     </Link>
                 </div>
