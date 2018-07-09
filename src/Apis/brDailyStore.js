@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import '../css/loader.css';
 
-const API = 'http://localhost:8080/brDailyStore';
+const API = process.env.REACT_APP_API_HOST + 'brDailyStore';
 const DEFAULT_QUERY = '';
 
 const withFetching = (url) => (Comp) =>

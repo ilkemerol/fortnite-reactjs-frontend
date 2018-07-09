@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import '../css/serverStatus.css';
 
-const API = 'http://localhost:8080/serverStatus';
+const API = process.env.REACT_APP_API_HOST +  'serverStatus';
 const DEFAULT_QUERY = '';
 
 const withFetching = (url) => (Comp) =>

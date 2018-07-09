@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import '../css/loader.css';
 import firstPlaceImg from '../images/leaderboard_1.png';
 
-const API = 'http://localhost:8080/topTen';
+const API = process.env.REACT_APP_API_HOST + 'topTen';
 const DEFAULT_QUERY = '';
 
 const withFetching = (url) => (Comp) =>

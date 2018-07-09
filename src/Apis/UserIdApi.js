@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const API = 'http://localhost:8080/userId?name=';
+const API = process.env.REACT_APP_API_HOST + 'userId?name=';
 const DEFAULT_QUERY = 'MyChoo';
 
 const withFetching = (url) => (Comp) =>

@@ -55,25 +55,33 @@ const patchNotes = ({ data, isLoading, error }) => {
   }
 
   if (error) {
-    return <div className="container margin-top-30 margin-bottom-30">
-    <div className="row newsBorder">
-        <div className="col-lg-3">
-            <p className="font-style text-white newsLineHeight font-size-25 margin-auto">Patch Notes: </p>
+    return <div className="container margin-top-30 margin-bottom-30 text-center">
+    <div className="row">
+      <div className="col-lg-12">
+        <h1 className="text-center text-white font-style">Newest Patch Notes from Lama</h1>
+        <button className="btn btn-warning font-style margin-bottom-30" data-toggle="collapse" data-target="#demo">Opps!</button>
+      </div>
+    </div>
+    <div id="demo" className="collapse newsBorder">
+    <div className="row">
+        <div className="col-lg-12" style={{height: '50px'}}>
+            <div className='loading'><div className='bullet'></div><div className='bullet'></div><div className='bullet'></div><div className='bullet'></div></div>;
         </div>
-        <div className="col-lg-9">
-            <div className="scroll-left">
-                <p className="text-white">error</p>
-            </div>
-        </div>
+    </div>
     </div>
     </div>;
   }
 
   if (isLoading) {
     return <div className="container margin-top-30 margin-bottom-30 text-center">
-    <button data-toggle="collapse" data-target="#demo">Collapsible</button>
-    <div id="demo" className="collapse">
-    <div className="row newsBorder">
+    <div className="row">
+      <div className="col-lg-12">
+        <h1 className="text-center text-white font-style">Newest Patch Notes from Lama</h1>
+        <button className="btn btn-warning font-style margin-bottom-30" data-toggle="collapse" data-target="#demo">Loading..</button>
+      </div>
+    </div>
+    <div id="demo" className="collapse newsBorder">
+    <div className="row">
         <div className="col-lg-12" style={{height: '50px'}}>
             <div className='loading'><div className='bullet'></div><div className='bullet'></div><div className='bullet'></div><div className='bullet'></div></div>;
         </div>
@@ -87,7 +95,8 @@ const patchNotes = ({ data, isLoading, error }) => {
     <div className="container margin-top-30 margin-bottom-30 text-center">
     <div className="row">
       <div className="col-lg-12">
-        <button data-toggle="collapse" data-target="#demo">Collapsible</button>
+        <h1 className="text-center text-white font-style">Newest Patch Notes from Lama</h1>
+        <button className="btn btn-warning font-style margin-bottom-30" data-toggle="collapse" data-target="#demo">Show Me</button>
       </div>
     </div>
       <div id="demo" className="collapse newsBorder">

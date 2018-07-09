@@ -5,7 +5,7 @@ import Moment from 'moment';
 import '../css/homeLoader.css';
 import lama from '../images/lama.png';
 
-const API = 'http://localhost:8080/news';
+const API = process.env.REACT_APP_API_HOST + 'news';
 const DEFAULT_QUERY = '';
 
 const withFetching = (url) => (Comp) =>
