@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import '../css/bootstrap.css';
 import '../App.css';
-import BrDailyStore from '../Apis/brDailyStore';
+import Top10 from '../Apis/top10';
 
 
-class brDailyStorePage extends Component {
+class top10Page extends Component {
   render() {
     return (
       <div>
-        <BrDailyStore />
+        <Top10 />
       </div>
     );
   }
 }
 
-export default brDailyStorePage;
+export default top10Page;
