@@ -73,7 +73,7 @@ const top10 = ({ data, isLoading, error }) => {
     {elem.map(e=>
       board.push(<div className="col-lg-4">
         <div className="margin-left-right-5 top10Border second">
-        <img className="padding-20" src={firstPlaceImg} style={{width: '100%'}}/>
+        <img className="padding-20" src={firstPlaceImg} alt="img" style={{width: '100%'}}/>
         <h1 className="font-style text-center text-white">{e.username}</h1>
         <hr className="hr margin-bottom-30" />
         <h4 className="font-style text-center text-white">Kills: {e.kills}</h4>
@@ -153,19 +153,6 @@ const top10 = ({ data, isLoading, error }) => {
     return table
   }
 
-  function isTopThree(elem){
-    if(elem == "1"){
-        return "first";
-    } else if(elem == "2"){
-        return "second";
-    } else if(elem == "3"){
-        return "third";
-    } else {
-        return "defaultLeaderboard";
-    }
-  }
-
-
   if (error) {
     return <p>{error.message}</p>;
   }
@@ -174,7 +161,6 @@ const top10 = ({ data, isLoading, error }) => {
     return <div className='loading'><div className='bullet'></div><div className='bullet'></div><div className='bullet'></div><div className='bullet'></div></div>;
   }
   
-  var i = 0;
   return (
     <div className="container">
       <div className="row">

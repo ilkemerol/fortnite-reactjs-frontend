@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Moment from 'moment';
 
 import '../css/homeLoader.css';
@@ -42,10 +42,9 @@ const withFetching = (url) => (Comp) =>
 
 const news = ({ data, isLoading, error }) => {
   const hits = data.entries || [];
-  const type = data;
 
   function isActive(elem) {
-      if(elem == "0"){
+      if(elem === "0"){
           return " active"
       } else {
           return ""
@@ -68,10 +67,10 @@ const news = ({ data, isLoading, error }) => {
         console.log(customArr);
       }
       for(let j = 0; j < customArr.length; j++){
-        innerCarousel.push(<div key={customKey++} className="col-lg-3 mh550 lightUp">
-                <Link className="text-decoration-none" to={"/newsPage#" + customArr[j.title]}>
+        innerCarousel.push(<div key={customKey++} className="col-lg-3 mh550">
+                <Link className="text-decoration-none lightUp" to={"/newsPage#" + customArr[j].title}>
                 <p className="text-white text-center font-style font-size-20 mh75">{customArr[j].title}</p>
-                <img src={customArr[j].image} className="width100" />
+                <img src={customArr[j].image} alt="img" className="width100" />
                 <p className="text-white text-center">{Moment.unix(customArr[j].time).format('MMMM Do')}</p>
                 <hr className="hr" />
                 <p className="text-white text-center">{customArr[j].body}</p>
@@ -89,7 +88,7 @@ const news = ({ data, isLoading, error }) => {
   if (error) {
     return <div className="container">
     <div className="row">
-    <img src={lama} style={{width: '150px', height: '200px', margin: 'auto'}}/>
+    <img src={lama} alt="lama" style={{width: '150px', height: '200px', margin: 'auto'}}/>
     </div>
     <div className="row">
     <p className="font-style font-size-25 text-white margin-auto">Opps! We missed some Lama</p>

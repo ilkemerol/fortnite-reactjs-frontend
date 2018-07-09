@@ -42,13 +42,13 @@ const BrDailyStore = ({ data, isLoading, error }) => {
   const vbucks = data;
 
   function setBackgroundClazz(elem) {
-    if(elem == "legendary") {
+    if(elem === "legendary") {
       return "legendary"
-    } else if (elem == "epic") {
+    } else if (elem === "epic") {
       return "epic"
-    } else if (elem == "rare") {
+    } else if (elem === "rare") {
       return "rare"
-    } else if (elem = "uncommon") {
+    } else if (elem === "uncommon") {
       return "uncommon"
     } else {
       return "noClazz"
@@ -79,7 +79,7 @@ const BrDailyStore = ({ data, isLoading, error }) => {
         {hits.map(hit =>
           <div key={i++} className="col-lg-3">
             <div key={i++} className={"card splash-card splash " + setBackgroundClazz(hit.item.rarity)}>
-              <img src={hit.item.image} className="img-fluid splash card-img-top outfit"/>
+              <img src={hit.item.image} alt="img" className="img-fluid splash card-img-top outfit"/>
               <div className="card-img-overlay">
                 <div className="card-body itemdesc">
                   <h4 className="card-title itemname text-white"><span>{hit.name}</span></h4>
