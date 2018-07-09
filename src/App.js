@@ -13,6 +13,9 @@ WebFont.load({
 });
 
 class App extends Component {
+  componentDidMount() {
+    document.title = "Fortnite Apis"
+  }
   render() {
     return (
       <div>

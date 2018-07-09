@@ -44,7 +44,7 @@ const news = ({ data, isLoading, error }) => {
   const hits = data.entries || [];
 
   function isActive(elem) {
-      if(elem === "0"){
+      if(elem == "0"){
           return " active"
       } else {
           return ""
@@ -77,7 +77,7 @@ const news = ({ data, isLoading, error }) => {
                 </Link>
                 </div>)
       }
-      outerCarousel.push(<div key={customKey++} className={"carousel-item " + isActive(i)}><div className="container"><div className="row">{innerCarousel}</div></div></div>)
+      outerCarousel.push(<div key={customKey++} className={"carousel-item" + isActive(i)}><div className="container"><div className="row">{innerCarousel}</div></div></div>)
       innerCarousel = []
       i = i + 4;
     }

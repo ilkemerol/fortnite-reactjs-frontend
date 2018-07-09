@@ -42,13 +42,13 @@ const BrDailyStore = ({ data, isLoading, error }) => {
   const vbucks = data;
 
   function setBackgroundClazz(elem) {
-    if(elem === "legendary") {
+    if(elem == "legendary") {
       return "legendary"
-    } else if (elem === "epic") {
+    } else if (elem == "epic") {
       return "epic"
-    } else if (elem === "rare") {
+    } else if (elem == "rare") {
       return "rare"
-    } else if (elem === "uncommon") {
+    } else if (elem == "uncommon") {
       return "uncommon"
     } else {
       return "noClazz"
