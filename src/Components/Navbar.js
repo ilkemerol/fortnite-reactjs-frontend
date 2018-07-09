@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from 'react';
 import '../css/bootstrap.css';
 
 import logo from '../images/logo.png';
@@ -9,7 +8,7 @@ export default class Navbar extends React.Component {
     render() {
       return (
         <nav className="navbar navbar-expand-lg navbar-light bg-dark text-white">
-            <a href="../" className="navbar-brand font-style text-white"><img src={logo} style={{width: '40px'}}/></a>
+            <a href="../" className="navbar-brand font-style text-white"><img src={logo} alt="logo" style={{width: '40px'}}/></a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>

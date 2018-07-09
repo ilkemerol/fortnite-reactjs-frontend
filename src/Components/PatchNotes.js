@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import '../css/loader.css';
 
@@ -43,13 +42,15 @@ const patchNotes = ({ data, isLoading, error }) => {
 
   function createText(elem) {
       let text = []
+      let customKey = 0;
+
       for(let i = 0; i < elem.length; i++) {
         let fixed = elem[i].short;
         fixed = fixed.replace("<p>", "");
         fixed = fixed.replace(" <p>", "");
         fixed = fixed.replace("</p>", "");
         fixed = fixed.replace(" </p>", "");
-        text.push(<b style={{color: 'orange'}}>{elem[i].title}: </b>, fixed);
+        text.push(<b key={customKey++} style={{color: 'orange'}}>{elem[i].title}: </b>, fixed);
       }
       return text
   }

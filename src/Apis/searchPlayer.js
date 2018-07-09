@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import Navbar from '../Components/Navbar';
+import React from 'react';
 import '../css/bootstrap.css';
 import '../App.css';
 import '../css/loader.css';
