@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import Navbar from '../Components/Navbar';
 import '../css/bootstrap.css';
 import '../App.css';
 import SearchPlayer from '../Apis/searchPlayer';
