@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ApisList from './Components/ApisList';
 import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 import SearchBar from './Components/SearchBar';
 import './css/bootstrap.css';
 import './App.css';
@@ -20,6 +21,7 @@ class App extends Component {
         <div className="padding-10 bg-dimgray">
           <ApisList />{/*ApiList means main page controller*/}
         </div>
+        <Footer />
       </div>
     );
   }

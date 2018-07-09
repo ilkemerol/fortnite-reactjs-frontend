@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import '../css/loader.css';
 
-const API = 'http://localhost:8080/upComingItems';
+const API = process.env.REACT_APP_API_HOST + 'upComingItems';
 const DEFAULT_QUERY = '';
 
 const withFetching = (url) => (Comp) =>
@@ -55,7 +55,7 @@ const BrDailyStore = ({ data, isLoading, error }) => {
       <div className="row">
         
       </div>
-      <div className="row">
+      <div className="row margin-bottom-30">
         {hits.map(hit =>
           <div key={i++} className="col-lg-3">
             <div key={i++} className={"card splash-card splash " + hit.item.rarity}>
