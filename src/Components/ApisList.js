@@ -9,6 +9,9 @@ import top10Page from "../Pages/top10Page";
 
 import SearchBar from './SearchBar';
 import BrNews from "./brNews";
+import PatchNotes from "./PatchNotes";
+
+import '../css/patchNotes.css';
 
 class ApisList extends React.Component {
     render() {
@@ -30,7 +33,8 @@ class ApisList extends React.Component {
 const ApiListView = () => (
     <div>
         <SearchBar />
-        <h1 className="font-style text-center text-white">Breaking News</h1>
+        <PatchNotes />
+        <h1 className="font-style text-center text-white newsColorChangeClazz">Breaking News</h1>
         <hr className="hr margin-bottom-30" />
         <BrNews />
         <h1 className="font-style text-center text-white margin-bottom-30">Awesome Tools</h1>

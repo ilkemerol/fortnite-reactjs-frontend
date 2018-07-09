@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import '../css/bootstrap.css';
 
+import logo from '../images/logo.png';
+
 
 export default class Navbar extends React.Component {
     render() {
       return (
         <nav className="navbar navbar-expand-lg navbar-light bg-dark text-white">
-            <a href="../" className="navbar-brand font-style text-white">Fortnite</a>
+            <a href="../" className="navbar-brand font-style text-white"><img src={logo} style={{width: '40px'}}/></a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -17,10 +19,13 @@ export default class Navbar extends React.Component {
                         <a href="../" className="nav-link font-style text-white">Home</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link font-style"></a>
+                        <a href="/brDailyStorePage" className="nav-link font-style text-white">Daily Store</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link font-style"></a>
+                        <a href="/upComingItemsPage" className="nav-link font-style text-white">Upcoming Items</a>
+                    </li>
+                    <li className="nav-item">
+                        <a href="/top10Page" className="nav-link font-style text-white">TOP 10</a>
                     </li>
                 </ul>
             </div>

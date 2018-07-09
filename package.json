@@ -5,9 +5,12 @@
   "dependencies": {
     "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",
+    "moment": "^2.22.2",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
+    "react-fontawesome": "^1.6.1",
+    "react-moment": "^0.7.9",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",

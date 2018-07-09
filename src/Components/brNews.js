@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Moment from 'moment';
 
 import '../css/homeLoader.css';
-import lama from '../css/lama.png';
+import lama from '../images/lama.png';
 
 const API = 'http://localhost:8080/news';
 const DEFAULT_QUERY = '';
@@ -71,6 +72,7 @@ const news = ({ data, isLoading, error }) => {
                 <Link className="text-decoration-none" to={"/newsPage#" + customArr[j.title]}>
                 <p className="text-white text-center font-style font-size-20 mh75">{customArr[j].title}</p>
                 <img src={customArr[j].image} className="width100" />
+                <p className="text-white text-center">{Moment.unix(customArr[j].time).format('MMMM Do')}</p>
                 <hr className="hr" />
                 <p className="text-white text-center">{customArr[j].body}</p>
                 </Link>
@@ -80,6 +82,7 @@ const news = ({ data, isLoading, error }) => {
       innerCarousel = []
       i = i + 4;
     }
+    console.log(Moment.unix(1531009261).format('dddd, MMMM Do, YYYY h:mm:ss A'))
     return outerCarousel
   }
 

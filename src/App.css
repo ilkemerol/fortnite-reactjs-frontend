@@ -42,7 +42,7 @@
 }
 
 .mh550 {
-  min-height: 550px;
+  min-height: 550px !important;
 }
 
 .mh75 {
@@ -87,6 +87,10 @@
 
 .letter-spacing-2 {
   letter-spacing: 2px;
+}
+
+.letter-spacing-4 {
+  letter-spacing: 4px;
 }
 
 .table-hover tbody tr:hover {
@@ -239,4 +243,41 @@
 .top10Border {
   border: 3px solid rgba(255, 165, 0, 1);
   border-radius: 10px;
+}
+
+.newsColorChangeClazz {
+  -webkit-animation: newsColorChange 5s infinite;
+  animation: newsColorChange 5s infinite;
+}
+
+.newsBorder {
+  border: 5px solid #ff0;
+}
+
+.newsLineHeight {
+  line-height: 50px;
+}
+
+@-webkit-keyframes newsColorChange {
+  0%     {color:white;}
+  50.0%  {color:orange;}
+  100.0%  {color:white;}
+}
+
+@keyframes hrColorChange {
+  0%     {color:white;}
+  50.0%  {color:orange;}
+  100.0%  {color:white;}
+}
+
+.extLink:hover {
+  color: orange !important;
+}
+
+.hidden-bg {
+  background-color: #ffc10700 !important;
+}
+
+.display-inline {
+  display: inline-block;
 }
