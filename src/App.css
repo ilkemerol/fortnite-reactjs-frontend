@@ -45,6 +45,10 @@
   min-height: 550px !important;
 }
 
+.mh600 {
+  min-height: 600px !important;
+}
+
 .mh75 {
   min-height: 75px;
 }

@@ -85,6 +85,40 @@ const news = ({ data, isLoading, error }) => {
     return outerCarousel
   }
 
+  function createCauselContentForSmallDevices(elem){
+    let outerCarousel = []
+    let innerCarousel = []
+    let customArr;
+    let i = 0;
+    let customKey = 0;
+    console.log(elem);
+    while(i < elem.length) {
+      if((i + 1) < elem.length ){
+        customArr = elem.slice(i, i + 1);
+        console.log(customArr);
+      } else {
+        customArr = elem.slice(i, elem.length);
+        console.log(customArr);
+      }
+      for(let j = 0; j < customArr.length; j++){
+        innerCarousel.push(<div key={customKey++} className="col-lg-12 mh600">
+                <Link className="text-decoration-none lightUp" to={"/newsPage#" + customArr[j].title}>
+                <p className="text-white text-center font-style font-size-20 mh75">{customArr[j].title}</p>
+                <img src={customArr[j].image} alt="img" className="width100" />
+                <p className="text-white text-center">{Moment.unix(customArr[j].time).format('MMMM Do')}</p>
+                <hr className="hr" />
+                <p className="text-white text-center">{customArr[j].body}</p>
+                </Link>
+                </div>)
+      }
+      outerCarousel.push(<div key={customKey++} className={"carousel-item" + isActive(i)}><div className="container"><div className="row">{innerCarousel}</div></div></div>)
+      innerCarousel = []
+      i = i + 1;
+    }
+    console.log(Moment.unix(1531009261).format('dddd, MMMM Do, YYYY h:mm:ss A'))
+    return outerCarousel
+  }
+
   if (error) {
     return <div className="container">
     <div className="row">
@@ -109,13 +143,13 @@ const news = ({ data, isLoading, error }) => {
   }
   
   return (
-    <div id="carouselExampleIndicators" className="carousel slide margin-bottom-30" data-ride="carousel">
+    <div id="carouselComponent">
+      <div id="carouselExampleIndicators" className="carousel slide margin-bottom-30 hidden-sm-down" data-ride="carousel">
         <ol className="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
         </ol>
         <div className="carousel-inner">
             {createCarouselContent(hits)}
@@ -128,6 +162,37 @@ const news = ({ data, isLoading, error }) => {
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="sr-only">Next</span>
         </a>
+      </div>
+
+      <div id="carouselExampleIndicatorsForSmallDevices" className="carousel slide margin-bottom-30 hidden-md-up" data-ride="carousel">
+        <ol className="carousel-indicators">
+            <li data-target="#carouselExampleIndicatorsForSmallDevices" data-slide-to="0" className="active"></li>
+            <li data-target="#carouselExampleIndicatorsForSmallDevices" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicatorsForSmallDevices" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicatorsForSmallDevices" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicatorsForSmallDevices" data-slide-to="4"></li>
+            <li data-target="#carouselExampleIndicatorsForSmallDevices" data-slide-to="4"></li>
+            <li data-target="#carouselExampleIndicatorsForSmallDevices" data-slide-to="5"></li>
+            <li data-target="#carouselExampleIndicatorsForSmallDevices" data-slide-to="6"></li>
+            <li data-target="#carouselExampleIndicatorsForSmallDevices" data-slide-to="7"></li>
+            <li data-target="#carouselExampleIndicatorsForSmallDevices" data-slide-to="8"></li>
+            <li data-target="#carouselExampleIndicatorsForSmallDevices" data-slide-to="9"></li>
+            <li data-target="#carouselExampleIndicatorsForSmallDevices" data-slide-to="10"></li>
+            <li data-target="#carouselExampleIndicatorsForSmallDevices" data-slide-to="11"></li>
+            <li data-target="#carouselExampleIndicatorsForSmallDevices" data-slide-to="12"></li>
+        </ol>
+        <div className="carousel-inner">
+            {createCauselContentForSmallDevices(hits)}
+        </div>
+        <a className="carousel-control-prev" href="#carouselExampleIndicatorsForSmallDevices" role="button" data-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="sr-only">Previous</span>
+        </a>
+        <a className="carousel-control-next" href="#carouselExampleIndicatorsForSmallDevices" role="button" data-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
+        </a>
+      </div>
     </div>
   );
 }
