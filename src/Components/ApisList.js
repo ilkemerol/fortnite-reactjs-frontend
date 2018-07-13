@@ -41,7 +41,7 @@ const ApiListView = () => (
         <hr className="hr margin-bottom-30" />
         <div className="container margin-top-30 margin-bottom-100">
             <div className="row">
-                <div className="col-lg-6 text-center">
+                <div className="col-lg-6 text-center margin-bottom-30">
                     <Link className="text-decoration-none" to="/brDailyStorePage">
                         <div className="customMainPageCard mainPagedailyStore splash">
                             <p className="text-center text-white font-style font-size-25 customMainPageCardtext">Daily Item Shop</p>
