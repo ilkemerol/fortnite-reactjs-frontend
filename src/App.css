@@ -1,3 +1,7 @@
+.emreCenter {
+  text-align: center;
+}
+
 .override-loading {
   position: relative !important;
   margin-top: 30px;

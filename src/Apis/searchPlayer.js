@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/bootstrap.css';
 import '../App.css';
 import '../css/loader.css';
+import playerImg from '../images/player.png';
 
 const API = process.env.REACT_APP_API_HOST + 'playerStats?name=';
 
@@ -42,6 +43,9 @@ class searchPlayer extends React.Component {
           <div>
           <p>Your URL is, {API + this.state.user}</p>
           <div>
+            <div className = "emreCenter">
+              <img src={playerImg} className = "responsive"/>
+            </div>
             <p className = "text-white">{this.state.data.name}</p>
             <p className = "text-white">{this.state.data.platform}</p>
             <p className = "text-white">{this.state.data.window}</p>
