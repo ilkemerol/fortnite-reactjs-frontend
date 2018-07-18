@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import '../css/bootstrap.css';
 import '../App.css';
-import BrDailyStore from '../Apis/brDailyStore';
 
 
-class brDailyStorePage extends Component {
+class newsPage extends Component {
   render() {
     return (
       <div>
-        <BrDailyStore />
+        <p className="text-white">TO DO</p>
       </div>
     );
   }
 }
 
-export default brDailyStorePage;
+export default newsPage;

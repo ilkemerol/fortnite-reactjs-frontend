@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ApisList from './Components/ApisList';
 import Navbar from './Components/Navbar';
-import SearchBar from './Components/SearchBar';
+import Footer from './Components/Footer';
 import './css/bootstrap.css';
 import './App.css';
 import WebFont from 'webfontloader';
@@ -13,6 +13,9 @@ WebFont.load({
 });
 
 class App extends Component {
+  componentDidMount() {
+    document.title = "Fortnite Apis"
+  }
   render() {
     return (
       <div>
@@ -20,6 +23,7 @@ class App extends Component {
         <div className="padding-10 bg-dimgray">
           <ApisList />{/*ApiList means main page controller*/}
         </div>
+        <Footer />
       </div>
     );
   }

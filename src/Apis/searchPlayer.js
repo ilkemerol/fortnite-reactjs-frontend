@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import Navbar from '../Components/Navbar';
+import React from 'react';
 import '../css/bootstrap.css';
 import '../App.css';
 import '../css/loader.css';
 
-const API = 'http://localhost:8080/playerStats?name=';
+const API = process.env.REACT_APP_API_HOST + 'playerStats?name=';
 
 class searchPlayer extends React.Component {
     constructor(props){

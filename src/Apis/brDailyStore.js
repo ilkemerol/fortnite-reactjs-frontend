@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import '../css/loader.css';
 
-const API = 'http://localhost:8080/brDailyStore';
+const API = process.env.REACT_APP_API_HOST + 'brDailyStore';
 const DEFAULT_QUERY = '';
 
 const withFetching = (url) => (Comp) =>
@@ -48,7 +48,7 @@ const BrDailyStore = ({ data, isLoading, error }) => {
       return "epic"
     } else if (elem == "rare") {
       return "rare"
-    } else if (elem = "uncommon") {
+    } else if (elem == "uncommon") {
       return "uncommon"
     } else {
       return "noClazz"
@@ -67,18 +67,19 @@ const BrDailyStore = ({ data, isLoading, error }) => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-lg-6">
-          <p className="font-style font-size-20 text-white">Current Item Shop</p>
+        <div className="col-lg-12">
+          <h1 className="font-style text-center text-white">Current Item Shop</h1>
+          <hr className="hr margin-bottom-30" />
         </div>
-        <div className="col-lg-6">
-          <p className="font-style font-size-20 text-white">Shop Date: {vbucks.date}</p>
+        <div className="col-lg-12">
+          <p className="font-style font-size-20 text-white" style={{float: 'right'}}>Shop Date: {vbucks.date}</p>
         </div>
       </div>
-      <div className="row">
+      <div className="row margin-bottom-30">
         {hits.map(hit =>
           <div key={i++} className="col-lg-3">
             <div key={i++} className={"card splash-card splash " + setBackgroundClazz(hit.item.rarity)}>
-              <img src={hit.item.image} className="img-fluid splash card-img-top outfit"/>
+              <img src={hit.item.image} alt="img" className="img-fluid splash card-img-top outfit"/>
               <div className="card-img-overlay">
                 <div className="card-body itemdesc">
                   <h4 className="card-title itemname text-white"><span>{hit.name}</span></h4>
