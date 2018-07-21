@@ -4,8 +4,6 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSkull } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faSkull)
-
 import brDailyStorePage from "../Pages/brDailyStorePage";
 import upComingItemsPage from "../Pages/upComingItemsPage";
 import searchPlayerPage from "../Pages/searchPlayerPage";
@@ -17,6 +15,8 @@ import BrNews from "./brNews";
 import PatchNotes from "./PatchNotes";
 
 import '../css/patchNotes.css';
+
+library.add(faSkull)
 
 class ApisList extends React.Component {
     render() {
