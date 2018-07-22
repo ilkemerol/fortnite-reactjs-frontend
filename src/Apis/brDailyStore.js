@@ -2,15 +2,21 @@ import React, { Component } from 'react';
 
 import '../css/loader.css';
 
-const API = process.env.REACT_APP_API_HOST + 'brDailyStore';
+const API = process.env.REACT_APP_API_HOST + 'brDailyStore?storeDate=';
 const DEFAULT_QUERY = '';
 
 const withFetching = (url) => (Comp) =>
   class WithFetching extends Component {
     constructor(props) {
       super(props);
+      function getMonth(date) {
+        var month = date.getMonth() + 1;
+        return month < 10 ? '0' + month : '' + month;
+      }  
+      var todayDate = new Date().getDate() + '-' + getMonth(new Date()) + '-' + new Date().getFullYear();
 
       this.state = {
+        storeDate: todayDate,
         data: {},
         isLoading: false,
         error: null,
@@ -20,7 +26,7 @@ const withFetching = (url) => (Comp) =>
     componentDidMount() {
       this.setState({ isLoading: true });
 
-      fetch(url)
+      fetch(url + this.state.storeDate)
         .then(response => {
           if (response.ok) {
             return response.json();
@@ -37,7 +43,7 @@ const withFetching = (url) => (Comp) =>
     }
   }
 
-const BrDailyStore = ({ data, isLoading, error }) => {
+const BrDailyStore = ({ storeDate, data, isLoading, error }) => {
   const hits = data.items || [];
   const vbucks = data;
 
