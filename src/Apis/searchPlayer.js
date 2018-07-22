@@ -1,6 +1,8 @@
 import React from 'react';
 import '../css/bootstrap.css';
+
 import '../App.css';
+import '../css/searchPage.css';
 import '../css/loader.css';
 import playerImg from '../images/player.png';
 import timeIcon from '../images/time-icon.ico';
@@ -9,6 +11,7 @@ import winIcon from '../images/win-icon.ico';
 import battlePassIcon from '../images/battle-pass-icon.ico';
 
 const API = process.env.REACT_APP_API_HOST + 'playerStats?name=';
+
 
 class searchPlayer extends React.Component {
     constructor(props){
@@ -47,6 +50,7 @@ class searchPlayer extends React.Component {
         }
         return (
           <div>
+            <i class="fab fa-500px"></i>
             <div className = "player-icon-div">
               <img src={playerImg} className = "player-icon" style= {{margin: '20px'}}/>
               <h3 className = "p-blue font-style col-sm-12 col-md-12 col-lg-12">{this.state.data.username}  <img src={battlePassIcon}/></h3>
@@ -70,30 +74,38 @@ class searchPlayer extends React.Component {
                 </div>
               </div>
             </div>
-            <div>
+            <div className = "margin-bottom-30">
               <div className = "container-fluid" style={{marginLeft:"5%",marginRight:"5%"}}>
                 <div className = "row">
-                  <div className = "col-lg-4 div-solo">
-                  <div className = "row row-solo">
-                    <h4 className = "p-white-center font-style" style={{marginTop:"10px",marginLeft: "5px",textAlign:"center"}}>Solo</h4>
+                  <div className = "col-lg-4">
+                    <div className = "div-table-border border-radius-10 border-green">
+                      <div className = "season-table-header header-green top-left-right-radius-10">
+                        <h4 className = "p-white-center font-style" style={{marginLeft: "5px",textAlign:"center"}}>Solo</h4>
+                      </div>
+                      <h5 className = "p-white font-style h5-alltime"><img src={timeIcon} className = "time-icon"/>{stats.kills_solo}</h5>
+                      <h5 className = "p-white font-style h5-alltime"><img src={killIcon} className = "time-icon"/> {totals.kills}</h5>
+                      <h5 className = "p-white font-style h5-alltime"><img src={winIcon} className = "time-icon"/> {totals.wins}</h5>
+                    </div>
                   </div>
-                  <h5 className = "p-white font-style h5-alltime"><img src={timeIcon} className = "time-icon"/> {totals.hoursplayed} Hours</h5>
-                  <h5 className = "p-white font-style h5-alltime"><img src={killIcon} className = "time-icon"/> {totals.kills}</h5>
-                  <h5 className = "p-white font-style h5-alltime"><img src={winIcon} className = "time-icon"/> {totals.wins}</h5>
+                  <div className = "col-lg-4">
+                    <div className = "div-table-border border-radius-10 border-purple">
+                      <div className = "season-table-header header-purple top-left-right-radius-10">
+                        <h4 className = "p-white-center font-style" style={{marginLeft: "5px",textAlign:"center"}}>Duo</h4>
+                      </div>
+                      <h5 className = "p-white font-style h5-alltime"><img src={timeIcon} className = "time-icon"/> {totals.hoursplayed} Hours</h5>
+                      <h5 className = "p-white font-style h5-alltime"><img src={killIcon} className = "time-icon"/> {totals.kills}</h5>
+                      <h5 className = "p-white font-style h5-alltime"><img src={winIcon} className = "time-icon"/> {totals.wins}</h5>
+                    </div>
                   </div>
-                  <div className = "col-lg-4 div-solo">
-                  <h4 className = "p-green font-style" style={{marginTop:"10px"}}>All Time Stats</h4>
-                  <hr className = "hr" style={{width:'200px'}}></hr>
-                  <h5 className = "p-white font-style h5-alltime"><img src={timeIcon} className = "time-icon"/> {totals.hoursplayed} Hours</h5>
-                  <h5 className = "p-white font-style h5-alltime"><img src={killIcon} className = "time-icon"/> {totals.kills}</h5>
-                  <h5 className = "p-white font-style h5-alltime"><img src={winIcon} className = "time-icon"/> {totals.wins}</h5>
-                  </div>
-                  <div className = "col-lg-4 div-solo">
-                  <h4 className = "p-green font-style" style={{marginTop:"10px"}}>All Time Stats</h4>
-                  <hr className = "hr" style={{width:'200px'}}></hr>
-                  <h5 className = "p-white font-style h5-alltime"><img src={timeIcon} className = "time-icon"/> {totals.hoursplayed} Hours</h5>
-                  <h5 className = "p-white font-style h5-alltime"><img src={killIcon} className = "time-icon"/> {totals.kills}</h5>
-                  <h5 className = "p-white font-style h5-alltime"><img src={winIcon} className = "time-icon"/> {totals.wins}</h5>
+                  <div className = "col-lg-4">
+                    <div className = "div-table-border border-radius-10 border-orange">
+                      <div className = "season-table-header header-orange top-left-right-radius-10">
+                        <h4 className = "p-white-center font-style" style={{marginLeft: "5px",textAlign:"center"}}>Squad</h4>
+                      </div>
+                      <h5 className = "p-white font-style h5-alltime"><img src={timeIcon} className = "time-icon"/> {totals.hoursplayed} Hours</h5>
+                      <h5 className = "p-white font-style h5-alltime"><img src={killIcon} className = "time-icon"/> {totals.kills}</h5>
+                      <h5 className = "p-white font-style h5-alltime"><img src={winIcon} className = "time-icon"/> {totals.wins}</h5>
+                    </div>
                   </div>
                 </div>
               </div>
