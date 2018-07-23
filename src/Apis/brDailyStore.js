@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import '../css/loader.css';
+import '../css/hrAnimation.css';
 
 const API = process.env.REACT_APP_API_HOST + 'brDailyStore?storeDate=';
 const DEFAULT_QUERY = '';
@@ -65,16 +66,19 @@ const withFetching = (url) => (Comp) =>
       return (
         <div>
         <div className="container">
-          <div className="row" style={{padding: '10px'}}>
+          <div className="row padding-10">
             <div className="col-lg-6">
               <h1 className="font-style text-white">Item Shop</h1>
             </div>
             <div className="col-lg-6 text-right">
-              <input className="outline_0 item-shop-search font-style text-center" type="search" placeholder="DD-MM-YYYY" value = {this.state.tempValue} onChange = {event => this.setState({tempValue : event.target.value})}/>
+              <input className="outline_0 item-shop-search font-style text-center text-white" type="search" placeholder="DD-MM-YYYY" value = {this.state.tempValue} onChange = {event => this.setState({tempValue : event.target.value})}/>
               <a href="#" className="item-shop-search-button font-style" onClick={this.changeState}>Get Store</a>
             </div>
             <div className="col-lg-12">
-              <hr className="hr-reverse margin-bottom-30" />
+              <div className="wm-preloader">
+                <div className="wm-loading-line"></div>
+                <div className="wm-loading-line wm-loading-line-clone"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -113,12 +117,12 @@ const BrDailyStore = ({ data, isLoading, error }) => {
   var i = 0;
   return (
     <div className="container">
-      <div className="row">
+      <div className="row padding-10">
         <div className="col-lg-12">
-          <p className="font-style font-size-20 text-white" style={{float: 'right'}}>Shop Date: {vbucks.date}</p>
+          <p className="font-style font-size-30 text-white" style={{float: 'right'}}>Shop Date: {vbucks.date}</p>
         </div>
       </div>
-      <div className="row margin-bottom-30">
+      <div className="row padding-10 margin-bottom-30">
         {hits.map(hit =>
           <div key={i++} className="col-lg-3">
             <div key={i++} className={"card splash-card splash " + setBackgroundClazz(hit.item.rarity)}>
