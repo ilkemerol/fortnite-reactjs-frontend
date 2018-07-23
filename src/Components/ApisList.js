@@ -1,5 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSkull } from '@fortawesome/free-solid-svg-icons';
 
 import brDailyStorePage from "../Pages/brDailyStorePage";
 import upComingItemsPage from "../Pages/upComingItemsPage";
@@ -12,6 +15,8 @@ import BrNews from "./brNews";
 import PatchNotes from "./PatchNotes";
 
 import '../css/patchNotes.css';
+
+library.add(faSkull)
 
 class ApisList extends React.Component {
     render() {
@@ -34,6 +39,7 @@ const ApiListView = () => (
     <div>
         <SearchBar />
         <PatchNotes />
+        {/*<FontAwesomeIcon className="text-white font-size-25" icon="skull" />*/}
         <h1 className="font-style text-center text-white newsColorChangeClazz">Breaking News</h1>
         <hr className="hr margin-bottom-30" />
         <BrNews />
