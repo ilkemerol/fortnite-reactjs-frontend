@@ -1,0 +1,57 @@
+.wm-preloader {
+overflow: hidden;
+position: relative;
+height: 6px;
+border-radius: 10px
+}
+  
+.wm-loading-line {
+position: absolute;
+left: 0;
+bottom: 0;
+margin-left: -11%;
+width: 111%;
+min-height: 6px;
+-webkit-animation: loading-line 3s linear infinite;
+animation: loading-line 3s linear infinite;
+background: linear-gradient(to right, rgba(255, 165, 0, 0.75) 0%, rgba(255, 165, 0, 0.5) 25%, rgba(0, 0, 0, 0.75) 50%, rgba(255, 165, 0, 0.5) 75%, rgba(255, 165, 0, 0.75) 100%);
+}
+
+.wm-loading-line.wm-loading-line-clone {
+left: -111%;
+-webkit-animation: loading-line-clone 3s linear infinite;
+        animation: loading-line-clone 3s linear infinite;
+}
+@-webkit-keyframes loading-line {
+0% {
+    left: 0;
+}
+100% {
+    left: 111%;
+}
+}
+
+@keyframes loading-line {
+0% {
+    left: 0;
+}
+100% {
+    left: 111%;
+}
+}
+@-webkit-keyframes loading-line-clone {
+0% {
+    left: -111%;
+}
+100% {
+    left: 0;
+}
+}
+@keyframes loading-line-clone {
+0% {
+    left: -111%;
+}
+100% {
+    left: 0;
+}
+}
