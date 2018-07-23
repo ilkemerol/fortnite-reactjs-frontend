@@ -12,10 +12,12 @@ const withFetching = (url) => (Comp) =>
       function getMonth(date) {
         var month = date.getMonth() + 1;
         return month < 10 ? '0' + month : '' + month;
-      }  
+      }
+
       var todayDate = new Date().getDate() + '-' + getMonth(new Date()) + '-' + new Date().getFullYear();
 
       this.state = {
+        tempValue: "",
         storeDate: todayDate,
         data: {},
         isLoading: false,
@@ -26,6 +28,8 @@ const withFetching = (url) => (Comp) =>
     componentDidMount() {
       this.setState({ isLoading: true });
 
+      console.log("getStore backend URL ### " + url + this.state.storeDate);
+      
       fetch(url + this.state.storeDate)
         .then(response => {
           if (response.ok) {
@@ -38,12 +42,49 @@ const withFetching = (url) => (Comp) =>
         .catch(error => this.setState({ error, isLoading: false }));
     }
 
+    changeState = () => {
+      this.setState({storeDate: this.state.tempValue}, function(){
+        this.setState({ isLoading: true });
+        
+        console.log("getStore backend URL ### " + url + this.state.storeDate);
+        
+        fetch(url + this.state.storeDate)
+          .then(response => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error('Something went wrong ...');
+            }
+          })
+          .then(data => this.setState({ data, isLoading: false }))
+          .catch(error => this.setState({ error, isLoading: false }));
+      });
+    };
+
     render() {
-      return <Comp { ...this.props } { ...this.state } />
+      return (
+        <div>
+        <div className="container">
+          <div className="row" style={{padding: '10px'}}>
+            <div className="col-lg-6">
+              <h1 className="font-style text-white">Item Shop</h1>
+            </div>
+            <div className="col-lg-6 text-right">
+              <input className="outline_0 item-shop-search font-style text-center" type="search" placeholder="DD-MM-YYYY" value = {this.state.tempValue} onChange = {event => this.setState({tempValue : event.target.value})}/>
+              <a href="#" className="item-shop-search-button font-style" onClick={this.changeState}>Get Store</a>
+            </div>
+            <div className="col-lg-12">
+              <hr className="hr-reverse margin-bottom-30" />
+            </div>
+          </div>
+        </div>
+        <Comp { ...this.props } { ...this.state } />
+        </div>
+      )
     }
   }
 
-const BrDailyStore = ({ storeDate, data, isLoading, error }) => {
+const BrDailyStore = ({ data, isLoading, error }) => {
   const hits = data.items || [];
   const vbucks = data;
 
@@ -73,10 +114,6 @@ const BrDailyStore = ({ storeDate, data, isLoading, error }) => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-lg-12">
-          <h1 className="font-style text-center text-white">Current Item Shop</h1>
-          <hr className="hr margin-bottom-30" />
-        </div>
         <div className="col-lg-12">
           <p className="font-style font-size-20 text-white" style={{float: 'right'}}>Shop Date: {vbucks.date}</p>
         </div>
