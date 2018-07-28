@@ -1,0 +1,103 @@
+.player-icon-div {
+    text-align: center;
+  }
+  
+  .p-white {
+    color: #fff;
+  }
+  .p-blue {
+    color: #49acf2;
+  }
+  
+  .p-orange {
+    color: #d37841;
+  }
+  
+  .p-green {
+    color: rgb(31, 189, 0);
+    text-align: center;
+  }
+  
+  .p-white-center {
+    color: #fff;
+    text-align: center;
+  }
+  
+  .div-border-center{
+    text-align: center;
+  }
+  
+  .h5-alltime {
+    text-align: center;
+  }
+  
+  .season-table-header {
+    text-align: center;
+    padding-top: 5px;
+  }
+
+  .header-green{
+    background-color: rgb(30, 158, 4);
+  }
+
+  .header-purple{
+    background-color: rgb(88, 18, 153);
+  }
+
+  .header-orange{
+    background-color: rgb(223, 94, 8);
+  }
+  
+  .div-alltime {
+    border-style: solid;
+    border-color: rgb(196, 196, 196);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  .div-table-border{
+    border: 1px solid white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .top-left-right-radius-10{
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+  }
+
+  .border-green {
+    border-color:rgb(30, 158, 4);;
+  }
+  
+  .border-purple {
+    border-color: rgb(88, 18, 153);
+  }
+
+  .border-orange {
+    border-color: rgb(223, 94, 8);
+  }
+
+  .border-radius-10{
+    border-radius: 10px;
+  }
+  
+  .div-solo {
+    border-style: solid;
+    border-color: rgb(30, 158, 4);
+    border-radius: 10px;
+  }
+  
+  .player-icon {
+    background-color: azure;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #ff0;
+  }
+  
+  .time-icon {
+    background-color: azure;
+    border-radius: 50%;
+  }
