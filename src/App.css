@@ -155,6 +155,15 @@
   overflow: hidden;
 }
 
+.mainPageweeklyMissions {
+  background: url("images/leaderboard_1.png"), radial-gradient(#d37841,#78371d);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 2px solid #fff;
+  overflow: hidden;
+}
+
 .customMainPageCard {
   height: 300px;
 }
