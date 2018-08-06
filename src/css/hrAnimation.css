@@ -14,7 +14,7 @@ width: 111%;
 min-height: 6px;
 -webkit-animation: loading-line 3s linear infinite;
 animation: loading-line 3s linear infinite;
-background: linear-gradient(to right, rgba(255, 165, 0, 0.75) 0%, rgba(255, 165, 0, 0.5) 25%, rgba(0, 0, 0, 0.75) 50%, rgba(255, 165, 0, 0.5) 75%, rgba(255, 165, 0, 0.75) 100%);
+background: linear-gradient(to right, rgba(255, 165, 0, 0.75) 0%, rgba(255, 165, 0, 0.5) 25%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 165, 0, 0.5) 75%, rgba(255, 165, 0, 0.75) 100%);
 }
 
 .wm-loading-line.wm-loading-line-clone {
