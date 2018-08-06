@@ -70,7 +70,7 @@ const withFetching = (url) => (Comp) =>
             <div className="col-lg-6">
               <h1 className="font-style text-white">Item Shop</h1>
             </div>
-            <div className="col-lg-6 text-right">
+            <div className="col-lg-6 text-right" data-tip="Just shows from 20-07-2018 to today. Other days show today item shop. Please sure, you write a correct format. (DD-MM-YYYY)">
               <input className="outline_0 item-shop-search font-style text-center text-white" type="search" placeholder="DD-MM-YYYY" value = {this.state.tempValue} onChange = {event => this.setState({tempValue : event.target.value})}/>
               <a href="#" className="item-shop-search-button font-style" onClick={this.changeState}>Get Store</a>
             </div>

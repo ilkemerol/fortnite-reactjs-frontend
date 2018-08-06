@@ -331,3 +331,31 @@
 .display-inline {
   display: inline-block;
 }
+
+[data-tip] {
+	position:relative;
+}
+
+[data-tip]:after {
+	display:none;
+	content:attr(data-tip);
+	position:absolute;
+	left:205px;
+	padding:5px 8px;
+	background:rgba(255, 165, 0, 0.9);
+	color:#fff;
+	z-index:9;
+	font-size: 1em;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+  word-wrap: break-word;
+  text-align: center;
+  max-width: 250px;
+  margin-top: 3px;
+}
+
+[data-tip]:hover:before,
+[data-tip]:hover:after {
+	display:block;
+}
