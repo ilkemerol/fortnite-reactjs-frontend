@@ -102,7 +102,7 @@ class searchPlayer extends React.Component {
                         <h4 className = "p-white-center font-style" style={{marginLeft: "5px",textAlign:"center"}}>Solo</h4>
                       </div>
                       <h5 className = "p-white font-style h5-alltime"><span className = "text-info">Matches:</span> {stats.matchesplayed_solo}</h5>
-                      <h5 className = "p-white font-style h5-alltifme"><FontAwesomeIcon className="text-info font-size-20" icon="skull" /> {stats.kills_solo}</h5>
+                      <h5 className = "p-white font-style h5-alltime"><FontAwesomeIcon className="text-info font-size-20" icon="skull" /> {stats.kills_solo}</h5>
                       <h5 className = "p-white font-style h5-alltime"><FontAwesomeIcon className="text-info font-size-20" icon="trophy" /> {stats.placetop1_solo}</h5>
                       <h5 className = "p-white font-style h5-alltime"><span className = "text-info">Winrate:</span> {stats.winrate_solo}</h5>
                     </div>
