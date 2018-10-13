@@ -61,6 +61,7 @@ class searchPlayer extends React.Component {
         }
         return (
           <div>
+            {/*
             <div style = {{textAlign: "right"}}>
               <select value={this.state.season} onChange = {event => this.setState({season: event.target.value},this.fetchUrl)}>
                 <option value="alltime">Volvo</option>
@@ -68,6 +69,7 @@ class searchPlayer extends React.Component {
                 <option value="season4">Mercedes</option>
               </select>
             </div>
+            */}
             <div className = "player-icon-div">
               <img src={playerImg} className = "player-icon" style= {{margin: '20px'}}/>
               <h3 className = "p-blue font-style col-sm-12 col-md-12 col-lg-12">{this.state.data.username}  <img src={battlePassIcon}/></h3>
@@ -100,7 +102,7 @@ class searchPlayer extends React.Component {
                         <h4 className = "p-white-center font-style" style={{marginLeft: "5px",textAlign:"center"}}>Solo</h4>
                       </div>
                       <h5 className = "p-white font-style h5-alltime"><span className = "text-info">Matches:</span> {stats.matchesplayed_solo}</h5>
-                      <h5 className = "p-white font-style h5-alltime"><FontAwesomeIcon className="text-info font-size-20" icon="skull" /> {stats.kills_solo}</h5>
+                      <h5 className = "p-white font-style h5-alltifme"><FontAwesomeIcon className="text-info font-size-20" icon="skull" /> {stats.kills_solo}</h5>
                       <h5 className = "p-white font-style h5-alltime"><FontAwesomeIcon className="text-info font-size-20" icon="trophy" /> {stats.placetop1_solo}</h5>
                       <h5 className = "p-white font-style h5-alltime"><span className = "text-info">Winrate:</span> {stats.winrate_solo}</h5>
                     </div>
