@@ -61,6 +61,7 @@ class searchPlayer extends React.Component {
         }
         return (
           <div>
+            {/*
             <div style = {{textAlign: "right"}}>
               <select value={this.state.season} onChange = {event => this.setState({season: event.target.value},this.fetchUrl)}>
                 <option value="alltime">Volvo</option>
@@ -68,6 +69,7 @@ class searchPlayer extends React.Component {
                 <option value="season4">Mercedes</option>
               </select>
             </div>
+            */}
             <div className = "player-icon-div">
               <img src={playerImg} className = "player-icon" style= {{margin: '20px'}}/>
               <h3 className = "p-blue font-style col-sm-12 col-md-12 col-lg-12">{this.state.data.username}  <img src={battlePassIcon}/></h3>
